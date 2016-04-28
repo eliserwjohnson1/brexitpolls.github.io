@@ -1,0 +1,20 @@
+img {text-align: center;}
+
+
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: left;
+}
+
+/* navbar */
+.navbar-default {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
+
+h3 {
+	text-align: left;
+}
