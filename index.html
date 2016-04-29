@@ -107,16 +107,40 @@ Here you will find facts rather than inflammatory information intended to cause 
 						In some cases the results can be surprising. For example, Zac Goldsmith is keen to leave the EU but he is running for London Mayor, where the majority of Londoners are in favour of remaining in the EU.
 						</font></h3>
 					</p>
-							<form action="action_page.php">
-					    <select id="gender">
-						    <option value="0">Female</option>
-						    <option value="1" selected="selected">Male</option>
-						</select>
-					    <br><br>
-					    <input class='myButton btn btn-default' type="button" value='Submit'>
-					    <div id="image">
+						<html>
 
-			    	</form>
+	<head>
+		<link rel="stylesheet" href="main.css" />
+		<script src="d3.js" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<h1>Postcode lookup</h1>
+		<div id="poll-chart" style="width:100%">
+			<input type="text"></input>
+			<button></button>
+			<span id="results"></span>		
+		</div>
+
+		<script charset="utf-8">
+			//Width and height
+			d3.select('button')
+			.on('click', function(d,i){
+				var postcode = d3.select('input').node().value;
+
+				var url = "https://api.postcodes.io/postcodes/" + postcode;
+
+				d3.json(url, function(error,data){
+					d3.select('#results').html(data.result.parliamentary_constituency);
+				});
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
